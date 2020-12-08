@@ -1,13 +1,13 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { makeStyles } from '@material-ui/core/styles'
 import { Avatar, Grid, Typography } from '@material-ui/core'
-import { reviews, avatarContent } from '../contents/avatarContent'
+import { avatarContent } from '../contents/avatarContent'
+import { reviews } from '../contents/middleContent'
 
 const useStyles = makeStyles((theme) => ({
     root: {
         height: 400,
         display: 'flex',
-        // backgroundColor: '#aaa',
         position: 'relative',
         justifyContent: 'center',
         alignItems: 'center',
@@ -39,7 +39,6 @@ const useStyles = makeStyles((theme) => ({
         width: '100%',
         maxHeight: 300,
         minHeight: 100,
-        // border: '1px solid red',
         borderRadius: 10,
         margin: theme.spacing(3),
         padding: theme.spacing(2),
@@ -77,16 +76,8 @@ const Review = () => {
         setCurrentReview(reviews[index])
     }, [index])
 
-
-    console.log(index)
-    // const changePosition = (thisRef) => {
-    //     console.log(thisRef.current.style.top);
-    //     thisRef.current.style.top = `${Math.random() * 500}px`
-    //     thisRef.current.style.left = `${Math.random() * 500}px`
-    // }
     return (
         <div className={classes.root}>
-            {/* <div className={classes.root} ref={ref} /> */}
             <div className={classes.container}>
                 <div ref={ref} className={classes.content}>
                     <Grid item className={classes.item}>

@@ -1,13 +1,24 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from 'react'
+import companyLogo from './assets/company_logo.png';
 import { Route } from 'react-router-dom';
 import Main from './pages/main'
-import { AppBar, Avatar, Button, Grid, Toolbar, Typography } from '@material-ui/core';
+import { AppBar, Avatar, Button, Grid, Toolbar, Typography, Modal, Backdrop, Fade } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles'
 import clsx from 'clsx'
-//import classes from '*.module.css';
+import CustomerForm from './components/CustomerForm/index'
+
 
 const useStyles = makeStyles((theme) => ({
+  modal: {
+    position: 'fixed',
+    top: '50%',
+    left: '50%',
+    transform: 'translate(-50%, -50%)',
+    width: 800,
+    maxWidth: '100%',
+    maxHeight: '100%',
+    outline: 'none',
+  },
   globalSpacing: {
     [theme.breakpoints.down('sm')]: {
       margin: theme.spacing(0, 1),
@@ -46,33 +57,48 @@ const useStyles = makeStyles((theme) => ({
   footer: {
     display: 'flex',
     justifyContent: 'center',
+    padding: theme.spacing(2),
+    '& .MuiTypography-root': {
+      color: theme.palette.secondary[600],
+    }
   },
 }))
 
-const Footer = (...props) => {
-  return (
-    <div {...props}>
-      <Typography>2020 Clean Wizard. All rights reserved</Typography>
-    </div>
-  )
-}
-
 function App() {
   const classes = useStyles();
+
+  const [open, setModalOpen] = useState(false);
+
+
   return (
     <div>
+      <Modal
+        open={open}
+        onClose={() => setModalOpen(false)}
+        closeAfterTransition
+        BackdropComponent={Backdrop}
+        BackdropProps={{ timeout: 500 }}
+      >
+        <Fade in={open}>
+          <div className={classes.modal}>
+            <CustomerForm setModalOpen={setModalOpen} />
+          </div>
+        </Fade>
+      </Modal>
       <AppBar className={classes.appbar}>
         <Toolbar className={clsx([classes.toolbar, classes.globalSpacing])}>
-          <Avatar className={classes.avatar} />
+          <Avatar src={companyLogo} className={classes.avatar} />
           <Typography variant='subtitle2'>청소의 달인</Typography>
-          <Button variant='contained' color='primary'>예약하기</Button>
+          <Button variant='contained' color='primary' onClick={() => setModalOpen(true)}>예약하기</Button>
         </Toolbar>
       </AppBar>
-      <Grid item xs={12} style={{ display: 'flex', justifyContent: 'flex-end' }}>
+      <Grid item xs={12} className={classes.globalSpacing} style={{ margin: 24, display: 'flex', justifyContent: 'flex-end' }}>
         <Typography size="small">English</Typography>
       </Grid>
-      <Route path='/' exact={true} component={Main} />
-      <Footer className={classes.footer} />
+      <Route path='/' exact={true} render={() => <Main setModalOpen={setModalOpen} />} />
+      <div className={classes.footer}>
+        <Typography>2020 Clean Wizard. All rights reserved.</Typography>
+      </div>
     </div>
   );
 }

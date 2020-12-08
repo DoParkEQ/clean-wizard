@@ -104,18 +104,3 @@ export const avatarContent = [{
     delay: '-3.5s',
 },
 ]
-
-export const reviews = [{
-    index: 0,
-    date: 'Nov 20, 2020',
-    content: 'Great company with very professional and thorough workers. It was very easy to schedule a time online. Rumyana arrived on time and left my place spotless. Highly recommend and will use their service again ! Thank you !',
-    location: 'Burnaby, BC',
-    name: 'Henry G',
-},
-{
-    index: 1,
-    date: 'Nov 11, 2020',
-    content: 'We’ve have Cleany for home cleaning service dozens of times and they are simply excellent.',
-    location: 'New Westminster, BC',
-    name: 'Oliver',
-}]

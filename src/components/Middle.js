@@ -1,8 +1,8 @@
 import React from 'react';
-import { Button, Divider, Grid, Hidden, Typography } from '@material-ui/core';
+import { Button, Grid, Hidden, Typography } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles'
 import { middleContent } from '../contents/middleContent';
-import clsx from 'clsx';
+
 
 
 const useStyles = makeStyles((theme) => ({
@@ -15,55 +15,13 @@ const useStyles = makeStyles((theme) => ({
         justifyContent: 'center'
     },
     container: {
-        [theme.breakpoints.down('sm')]: {
-            margin: theme.spacing(8, 0),
-            display: 'flex',
-            flexDirection: 'column',
-            alignItems: 'center',
-            '& .MuiTypography-root': {
-                textAlign: 'center',
-                marginBottom: theme.spacing(4),
-            }
-        },
-        [theme.breakpoints.up('sm')]: {
-            alignItems: 'center',
-        }
-    },
-    sliderContainer: {
-        display: 'flex',
-        overflowX: 'scroll',
-        width: '100%',
-        scrollbarWidth: 'none',
-        '&::-webkit-scrollbar': {
-            display: 'none',
-        }
-    },
-    sliderItem: {
-        objectFit: 'cover',
-        flex: '0 0 300px',
-        backgroundColor: theme.palette.secondary[400],
-        borderRadius: 10,
-        height: 300,
-        margin: theme.spacing(1),
-    },
-    verticalList: {
-        display: 'flex',
         alignItems: 'center',
-        '&>*': {
-            margin: theme.spacing(2),
+        [theme.breakpoints.down('md')]: {
+            textAlign: 'center',
         },
-        '.divider': {
-            height: 10,
+        [theme.breakpoints.up('md')]: {
+            textAlign: 'left',
         }
-    },
-    divider: {
-        height: 30,
-        width: 2,
-
-    },
-    alignCenter: {
-        display: 'flex',
-        justifyContent: 'center',
     },
     spacing: {
         [theme.breakpoints.down('sm')]: {
@@ -73,13 +31,26 @@ const useStyles = makeStyles((theme) => ({
             padding: theme.spacing(16, 0),
         },
     },
+    component: {
+        margin: theme.spacing(8, 0),
+    },
     action: {
-        paddingTop: theme.spacing(8),
         [theme.breakpoints.down('sm')]: {
             display: 'flex',
-            justifyContent: 'center'
+            justifyContent: 'center',
         },
-    }
+    },
+    contentHeader: {
+        textAlign: 'center',
+    },
+    rightPanel: {
+        display: 'flex',
+        flexDirection: 'column',
+        justifyContent: 'center',
+        '& div:last-child': {
+            marginTop: theme.spacing(4),
+        }
+    },
 }))
 
 const Card = ({ heading, paragraph, component, action, classes }) => {
@@ -87,28 +58,35 @@ const Card = ({ heading, paragraph, component, action, classes }) => {
     return (
         <>
             <Hidden mdUp>
-                <Grid item xs={12} className={classes.spacing}>
-                    <Typography variant='subtitle1'>{heading}</Typography>
-                    <Typography>{paragraph}</Typography>
-                    {component}
-                    <div className={classes.action}>
-                        {action}
-                    </div>
+                <Grid container className={classes.spacing}>
+                    <Grid item xs={12} >
+                        <Typography gutterBottom variant='subtitle1'>{heading}</Typography>
+                        <Typography >{paragraph}</Typography>
+                        <div className={classes.component}>
+                            {component}
+                        </div>
+                        <div className={classes.action}>
+                            {action !== null && <Button variant='outlined' color='primary' fullWidth>견적 내보기</Button>}
+                        </div>
+                    </Grid>
                 </Grid>
             </Hidden>
             <Hidden smDown>
-                <Grid item xs={6} className={classes.spacing}>
-                    {component}
-                </Grid>
-                <Grid item xs={1} />
-                <Grid item xs={5} className={classes.spacing}>
-                    <Typography variant='subtitle1'>{heading}</Typography>
-                    <Typography>{paragraph}</Typography>
-                    <div className={classes.action}>
-                        {action}
-                    </div>
+                <Grid container className={classes.spacing}>
+                    <Grid item xs={6} >
+                        {component}
+                    </Grid>
+                    <Grid item xs={1} />
+                    <Grid item xs={5} className={classes.rightPanel}>
+                        <Typography gutterBottom variant='subtitle1'>{heading}</Typography>
+                        <Typography>{paragraph}</Typography>
+                        <div className={classes.action}>
+                            {action !== null && <Button variant='outlined' color='primary'>견적 내보기</Button>}
+                        </div>
+                    </Grid>
                 </Grid>
             </Hidden>
+
         </>
     )
 }
@@ -118,10 +96,10 @@ const Middle = () => {
 
     return (
         <>
+            <Grid item xs={12} className={classes.contentHeader}>
+                <Typography variant='h6'>"청소의 달인에게 일을 맡겨야 하는 이유가 있나요?"</Typography>
+            </Grid>
             <Grid container className={classes.container}>
-                <Grid item xs={12} style={{ margin: 64 }}>
-                    <Typography variant='h6' style={{ textAlign: 'center' }}>청소의 달인에게 일을 맡겨야 하는 이유가 있나요?</Typography>
-                </Grid>
                 {middleContent.map((content) => <Card {...content} classes={classes} />)}
             </Grid >
         </>

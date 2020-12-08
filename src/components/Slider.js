@@ -2,7 +2,6 @@ import React from 'react';
 import { makeStyles } from '@material-ui/core/styles'
 import SwiperCore, { Pagination, Autoplay } from 'swiper'
 import { Swiper, SwiperSlide } from 'swiper/react'
-import { Grid, Typography } from '@material-ui/core';
 import { useWindowDimensions } from '../utils/hooks'
 import 'swiper/swiper.scss';
 import 'swiper/components/pagination/pagination.scss';
@@ -21,13 +20,12 @@ const useStyles = makeStyles((theme) => ({
     },
     sliderItem: {
         objectFit: 'cover',
-        //flex: '0 0 300px',
         borderRadius: 10,
         height: '100%',
         width: '100%',
-        // padding: theme.spacing(1),
     },
     overlay: {
+
         height: (height) => height,
         width: '100%',
         position: 'absolute',
@@ -46,7 +44,7 @@ const useStyles = makeStyles((theme) => ({
         height: (height) => height,
     },
 }))
-const arr = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+
 
 const getDirection = (status) => status ? 'horizontal' : 'vertical'
 

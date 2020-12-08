@@ -1,7 +1,7 @@
 import AvatarContent from '../components/AvatarContent'
-import { Avatar, Button, Typography } from '@material-ui/core'
 import Slider from '../components/Slider'
 import Review from '../components/Review'
+
 const images = [
     {
         image: 'https://wallpaperaccess.com/full/340434.png',
@@ -49,7 +49,31 @@ export const middleContent = [
         heading: '셋째, 청소의 달인은 정직합니다.',
         paragraph: '청소는 해야겠는데 견적이 고민이신가요? 청소의 달인은 꼭 필요한 청소만으로 최대의 효과를 보실 수 있게 도와드립니다. 고객님의 기쁨이 저희의 보람입니다.',
         component: <Review />,
-        action: <Button variant='outlined' color='primary'>견적 내보기</Button>,
+        action: null,
 
     }
+]
+
+export const reviews = [{
+    index: 0,
+    date: 'Nov 20, 2020',
+    content: 'Great company with very professional and thorough workers. It was very easy to schedule a time online. Rumyana arrived on time and left my place spotless. Highly recommend and will use their service again ! Thank you !',
+    location: 'Burnaby, BC',
+    name: 'Henry G',
+},
+{
+    index: 1,
+    date: 'Nov 11, 2020',
+    content: 'We’ve have Cleany for home cleaning service dozens of times and they are simply excellent.',
+    location: 'New Westminster, BC',
+    name: 'Oliver',
+},
+{
+    index: 2,
+    date: 'Nov 15, 2020',
+    content: 'test 3',
+    location: 'New Westminster, BC',
+    name: 'Oliver',
+},
+
 ]

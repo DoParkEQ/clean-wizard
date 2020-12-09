@@ -42,16 +42,20 @@ const Contact = ({ setModalOpen }) => {
             <Button variant='outlined' color='primary' onClick={() => setModalOpen(true)}>온라인으로 예약하기</Button>
             <Grid className={clsx([classes.contactList, classes.spacing])}>
                 <Grid item xs={4} className={classes.item}>
-                    <Avatar variant='square' src={phoneLogo}></Avatar>
+                    <a href='tel:+17782462613'>
+                        <Avatar variant='square' src={phoneLogo}></Avatar>
+                    </a>
                     <Typography>(778)-246-2613</Typography>
                 </Grid>
                 <Grid item xs={4} className={classes.item}>
                     <Avatar variant='square' src={kakaoLogo}></Avatar>
-                    <Typography>cleanwizard</Typography>
+                    <Typography>@cleanwizard</Typography>
                 </Grid>
                 <Grid item xs={4} className={classes.item}>
-                    <Avatar variant='square' src={instaLogo}></Avatar>
-                    <Typography>@cleanwizard</Typography>
+                    <a href='http://instagram.com/_u/cleanwizard.canada/'>
+                        <Avatar variant='square' src={instaLogo}></Avatar>
+                    </a>
+                    <Typography>@cleanwizard.canada</Typography>
                 </Grid>
             </Grid>
 

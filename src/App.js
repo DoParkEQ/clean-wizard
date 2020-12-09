@@ -92,9 +92,6 @@ function App() {
           <Button variant='contained' color='primary' onClick={() => setModalOpen(true)}>예약하기</Button>
         </Toolbar>
       </AppBar>
-      <Grid item xs={12} className={classes.globalSpacing} style={{ margin: 24, display: 'flex', justifyContent: 'flex-end' }}>
-        <Typography size="small">English</Typography>
-      </Grid>
       <Route path={['/', '/main']} render={() => <Main setModalOpen={setModalOpen} />} />
       <div className={classes.footer}>
         <Typography>2020 Clean Wizard. All rights reserved.</Typography>

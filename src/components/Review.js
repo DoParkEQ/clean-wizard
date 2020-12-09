@@ -6,7 +6,7 @@ import { reviews } from '../contents/middleContent'
 
 const useStyles = makeStyles((theme) => ({
     root: {
-        height: 400,
+        height: 500,
         display: 'flex',
         position: 'relative',
         justifyContent: 'center',
@@ -35,7 +35,6 @@ const useStyles = makeStyles((theme) => ({
         animation: `$fade 8s infinite`,
     },
     container: {
-
         width: '100%',
         maxHeight: 300,
         minHeight: 100,

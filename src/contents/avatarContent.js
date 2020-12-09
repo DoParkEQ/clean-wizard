@@ -14,15 +14,15 @@ const colors = {
 
 export const avatarContent = [{
     image: profile1,
-    size: 96,
-    top: '60%',
+    size: 72,
+    top: '70%',
     left: '76.7%',
     delay: '-1s',
 },
 {
     image: profile2,
     size: 64,
-    top: '20%',
+    top: '18%',
     left: '70%',
     delay: '-2s',
 },

@@ -22,27 +22,27 @@ const useStyles = makeStyles((theme) => ({
 const formList = [
     {
         id: 'name',
-        label: 'Name',
+        label: '이름',
     },
     {
         id: 'contact',
-        label: 'Contact',
+        label: '연락처',
     },
     {
         id: 'address',
-        label: 'Address',
+        label: '주소',
     },
     {
         id: 'city',
-        label: 'City',
+        label: '도시',
     },
     {
         id: 'postal',
-        label: 'Postal',
+        label: '포스탈 코드',
     },
 ]
 const phoneRegExp = /^((\\+[1-9]{1,4}[ \\-]*)|(\\([0-9]{2,3}\\)[ \\-]*)|([0-9]{2,4})[ \\-]*)*?[0-9]{3,4}?[ \\-]*[0-9]{3,4}?$/;
-const nameRegExp = /^[a-zA-Zㄱ-ㅎ|ㅏ-ㅣ|가-힣]+$/;
+const nameRegExp = /^[a-z|A-Z|ㄱ-ㅎ|ㅏ-ㅣ|가-힣]+$/;
 const postalRegExp = /^[ABCEGHJ-NPRSTVXY]\d[ABCEGHJ-NPRSTV-Z][ -]?\d[ABCEGHJ-NPRSTV-Z]\d$/i;
 
 const validationSchema = yup.object({

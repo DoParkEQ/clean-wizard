@@ -1,25 +1,35 @@
 import AvatarContent from '../components/AvatarContent'
 import Slider from '../components/Slider'
 import Review from '../components/Review'
+import sliderImage1 from '../assets/slider1.jpg'
+import sliderImage2 from '../assets/slider2.jpg'
+import sliderImage3 from '../assets/slider3.jpg'
+import sliderImage4 from '../assets/slider4.jpg'
+import sliderImage5 from '../assets/slider5.jpg'
+import sliderImage6 from '../assets/slider6.jpg'
+import sliderImage7 from '../assets/slider7.jpg'
 
 const images = [
     {
-        image: 'https://wallpaperaccess.com/full/340434.png',
+        image: sliderImage1,
     },
     {
-        image: 'https://wallpaperaccess.com/full/340434.png',
+        image: sliderImage2,
     },
     {
-        image: 'https://wallpaperaccess.com/full/340434.png',
+        image: sliderImage3,
     },
     {
-        image: 'https://wallpaperaccess.com/full/340434.png',
+        image: sliderImage4,
     },
     {
-        image: 'https://wallpaperaccess.com/full/340434.png',
+        image: sliderImage5,
     },
     {
-        image: 'https://wallpaperaccess.com/full/340434.png',
+        image: sliderImage6,
+    },
+    {
+        image: sliderImage7,
     },
 ]
 
@@ -57,23 +67,30 @@ export const middleContent = [
 export const reviews = [{
     index: 0,
     date: 'Nov 20, 2020',
-    content: 'Great company with very professional and thorough workers. It was very easy to schedule a time online. Rumyana arrived on time and left my place spotless. Highly recommend and will use their service again ! Thank you !',
+    content: '여러 업체에 청소를 해봤는데 청소의 달인 처럼 만족도가 높은 업체는 없었습니다. 친환경으로 구석, 구석 먼지를 불고 청소기로 흡입하시더군요. 샷시 유리창도 너무 깨끗하게 새것처럼 해 주셨어요. 수납장 주방도 정말 반짝반짝하게 해 주셔서 너무 감사합니다 ^^',
     location: 'Burnaby, BC',
-    name: 'Henry G',
+    name: '김*숙 님',
 },
 {
     index: 1,
-    date: 'Nov 11, 2020',
-    content: 'We’ve have Cleany for home cleaning service dozens of times and they are simply excellent.',
-    location: 'New Westminster, BC',
-    name: 'Oliver',
+    date: 'Aug 09, 2020',
+    content: '대표님이 직접오셔서 견적을 보셨고 오셨는데 복장이며, 스타일이 다른 업체보다 믿음이 가더라구요. 청소 당일날 구석구석 샷시, 유리벽, 화장실, 주방을 너무 깨끗하게 청소 해주셨어요. 무더운 여름 날씨에 땀을 흠뻑 흘리시면서 열심히 해 주신 청소의 달인 대표님 이하 전문가 분들께 다시한번 감사의 말씀을 드립니다.',
+    location: 'Coquitlam, BC',
+    name: '고*영 님',
 },
 {
     index: 2,
-    date: 'Nov 15, 2020',
-    content: 'test 3',
-    location: 'New Westminster, BC',
-    name: 'Oliver',
+    date: 'Jun 15, 2020',
+    content: '타운 하우스 이사 입주 청소 주방,냉장고 식기 세척기 등 많이 지저분하고 기름때가 많았는데 청소의달인에서 정말 새것마냥 깨끗하게 해주셨어요. 그날 정말 고생 많이 하셨습니다. 앞으로도 사업 번창하세요!',
+    location: 'Vancouver, BC',
+    name: '박*경 님',
+},
+{
+    index: 3,
+    date: 'Apr 03, 2020',
+    content: '이사를 일주일 앞두고 여러 입주 청소업체를 상담하고 찾다가 청소의 달인을 선택하게 되었습니다. 대표님이 정말 친절하고 자세하게 청소견적을 내주셔서 대만족 했습니다. 집이 깔끔한건 둘째치고 청소 후 집안의 공기가 달라졌어요. 저도 매번 이사다니면서 여러번 맡겨봤는데 이만큼 만족한 적은 청소의 달인이 처음인 것 같습니다.',
+    location: 'Vancouver, BC',
+    name: '최*우 님',
 },
 
 ]

@@ -19,7 +19,7 @@ const useStyles = makeStyles((theme) => ({
         }
     },
     sliderItem: {
-        objectFit: 'cover',
+        backgroundSize: 'cover',
         borderRadius: 10,
         height: '100%',
         width: '100%',
